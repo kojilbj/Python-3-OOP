@@ -1,29 +1,25 @@
 class calculator:
-    """Minimum calculator class"""
-    def __init__(self, array):
-        """Constructor"""
-        self.vector = array
 
-    def __add__(self, object) -> None:
-        """Add a scalar to each element of the vector."""
-        self.vector = [x + object for x in self.vector]
-        print(self.vector)
+    @staticmethod
+    def dotproduct(V1: list[float], V2: list[float]) -> None:
+        ret: float = 0.0
+        for i in range(len(V1)):
+            ret += V1[i] * V2[i]
+        print(f"Dot product is: {ret}")
+        return ret
 
-    def __mul__(self, object) -> None:
-        """mul a scalar to each element of the vector."""
-        self.vector = [x * object for x in self.vector]
-        print(self.vector)
+    @staticmethod
+    def add_vec(V1: list[float], V2: list[float]) -> None:
+        ret: list[float] = []
+        for i in range(len(V1)):
+            ret.append(float(V1[i]) + V2[i])
+        print(f"Add Vector is : {ret}")
+        return ret
 
-    def __sub__(self, object) -> None:
-        """sub a scalar to each element of the vector."""
-        self.vector = [x - object for x in self.vector]
-        print(self.vector)
-
-    def __truediv__(self, object) -> None:
-        """div each element of the vector by scalar."""
-        if (object == 0):
-            print("Error: Zero divided, not calculate")
-            print(self.vector)
-            return
-        self.vector = [x / object for x in self.vector]
-        print(self.vector)
+    @staticmethod
+    def sous_vec(V1: list[float], V2: list[float]) -> None:
+        ret: list[float] = []
+        for i in range(len(V1)):
+            ret.append(float(V1[i]) - V2[i])
+        print(f"Sous Vector is : {ret}")
+        return ret
