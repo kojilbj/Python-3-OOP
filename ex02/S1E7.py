@@ -44,7 +44,8 @@ class Lannister(Character):
         """Representing"""
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
-    def create_lannister(first_name: str, is_alive: bool):
+    @classmethod
+    def create_lannister(cls, first_name: str, is_alive: bool):
         """This function return new lannister instance."""
-        lannister = Lannister(first_name, is_alive)
+        lannister = cls(first_name, is_alive)
         return lannister
